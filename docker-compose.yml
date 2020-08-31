@@ -4,7 +4,7 @@ services:
   api:
     build: ./backend
     environment:
-      - CONNECTION_STRING=postgres://demo_user:demo_user@db/demo_db
+      - CONNECTION_STRING=postgres://vishal:vishal@db/mydb
     depends_on:
       - db
     networks:
@@ -25,9 +25,9 @@ services:
   db:
     image: postgres:11.2-alpine
     environment:
-      POSTGRES_USER: demo_user
-      POSTGRES_PASSWORD: demo_user
-      POSTGRES_DB: demo_db
+      POSTGRES_USER: vishal
+      POSTGRES_PASSWORD: vishal
+      POSTGRES_DB: mydb
     volumes:
       - ./init_sql_scripts/:/docker-entrypoint-initdb.d
     networks:
